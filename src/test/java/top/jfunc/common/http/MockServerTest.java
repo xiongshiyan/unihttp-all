@@ -9,7 +9,7 @@ import org.mockserver.model.Header;
 import org.mockserver.model.Parameter;
 import top.jfunc.common.http.base.Config;
 import top.jfunc.common.http.base.MediaType;
-import top.jfunc.common.http.holderrequest.HolderStringBodyRequest;
+import top.jfunc.common.http.holderrequest.StringBodyRequest;
 import top.jfunc.common.http.smart.*;
 
 import static org.mockserver.model.HttpRequest.request;
@@ -103,7 +103,7 @@ public class MockServerTest {
                         .withBody(BODY)
         );
 
-        HolderStringBodyRequest request = Request.of("http://localhost:50000/hello/{name}").setBody(BODY);
+        StringBodyRequest request = Request.of("http://localhost:50000/hello/{name}").setBody(BODY);
         request.routeParamHolder().addRouteParam("name" , "John");
         Response response = smartHttpClient.post(request);
         Assert.assertEquals(BODY, response.getBodyAsString());

@@ -7,7 +7,7 @@ import org.mockserver.client.MockServerClient;
 import org.mockserver.junit.MockServerRule;
 import top.jfunc.common.http.base.Config;
 import top.jfunc.common.http.base.HttpHeaders;
-import top.jfunc.common.http.holderrequest.impl.HolderGetRequest;
+import top.jfunc.common.http.holderrequest.DefaultRequest;
 import top.jfunc.common.http.request.HttpRequest;
 import top.jfunc.common.http.smart.*;
 
@@ -65,7 +65,7 @@ public class Non200Test {
                                 .withBody(BODY)
                 );
 
-        HttpRequest request = HolderGetRequest.of("http://localhost:50000/hello/400");
+        HttpRequest request = DefaultRequest.of("http://localhost:50000/hello/400");
         Response response = smartHttpClient.get(request);
         Assert.assertEquals(BODY , response.getBodyAsString());
         Assert.assertEquals(400 , response.getStatusCode());
@@ -83,7 +83,7 @@ public class Non200Test {
                                 .withBody(BODY)
                 );
 
-        HttpRequest request = HolderGetRequest.of("http://localhost:50000/hello/301");
+        HttpRequest request = DefaultRequest.of("http://localhost:50000/hello/301");
 
         request.retainResponseHeaders(Config.RETAIN_RESPONSE_HEADERS);
 
@@ -105,7 +105,7 @@ public class Non200Test {
                                 .withBody(BODY)
                 );
 
-        HttpRequest request = HolderGetRequest.of("http://localhost:50000/hello301/redirect");
+        HttpRequest request = DefaultRequest.of("http://localhost:50000/hello301/redirect");
 
         request.followRedirects(Config.FOLLOW_REDIRECTS);
 

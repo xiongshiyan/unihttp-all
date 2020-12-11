@@ -8,7 +8,7 @@ import org.mockserver.client.MockServerClient;
 import org.mockserver.junit.MockServerRule;
 import top.jfunc.common.http.base.Config;
 import top.jfunc.common.http.cookie.*;
-import top.jfunc.common.http.holderrequest.impl.HolderGetRequest;
+import top.jfunc.common.http.holderrequest.DefaultRequest;
 import top.jfunc.common.http.interceptor.Interceptor;
 import top.jfunc.common.http.smart.*;
 import top.jfunc.common.utils.MultiValueMap;
@@ -92,7 +92,7 @@ public class CookieTest {
 
 
         //服务端设置Cookie
-        Response response = smartHttpClient.get(HolderGetRequest.of("http://localhost:50000/hello/getCookie"));
+        Response response = smartHttpClient.get(DefaultRequest.of("http://localhost:50000/hello/getCookie"));
         MultiValueMap<String, String> headers = response.getHeaders();
         List<String> cookies = headers.get("set-cookie");
         List<String> expected = new ArrayList<>(2);
@@ -101,7 +101,7 @@ public class CookieTest {
         Assert.assertEquals(new HashSet<>(cookies) , new HashSet<>(expected));
 
         //客户端自动带上Cookie
-        Response response1 = smartHttpClient.get(HolderGetRequest.of("http://localhost:50000/hello/setCookie"));
+        Response response1 = smartHttpClient.get(DefaultRequest.of("http://localhost:50000/hello/setCookie"));
         Assert.assertEquals("body2", response1.getBodyAsString());
         Assert.assertEquals(200 , response1.getStatusCode());
     }

@@ -1,8 +1,6 @@
 package top.jfunc.common.http;
 
-import top.jfunc.common.http.annotation.HttpService;
-import top.jfunc.common.http.annotation.method.*;
-import top.jfunc.common.http.annotation.parameter.*;
+import top.jfunc.common.http.annotation.*;
 import top.jfunc.common.http.base.FormFile;
 import top.jfunc.common.http.request.HttpRequest;
 import top.jfunc.common.http.request.StringBodyRequest;

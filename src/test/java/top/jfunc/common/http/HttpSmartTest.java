@@ -7,8 +7,7 @@ import top.jfunc.common.http.base.Config;
 import top.jfunc.common.http.base.FormFile;
 import top.jfunc.common.http.base.MediaType;
 import top.jfunc.common.http.base.Method;
-import top.jfunc.common.http.holderrequest.impl.HolderCommonBodyRequest;
-import top.jfunc.common.http.holderrequest.impl.HolderPostBodyRequest;
+import top.jfunc.common.http.holderrequest.DefaultBodyRequest;
 import top.jfunc.common.http.smart.*;
 
 import java.io.File;
@@ -286,7 +285,7 @@ public class HttpSmartTest {
     private void testAll(SmartHttpClient smartHttpClient) throws Exception{
 
         MediaType mediaType = MediaType.APPLICATION_JSON.withCharset(Config.DEFAULT_CHARSET);
-        HolderCommonBodyRequest request = HolderPostBodyRequest.of("http://localhost:8080/http-server-test/post/all")
+        DefaultBodyRequest request = DefaultBodyRequest.of("http://localhost:8080/http-server-test/post/all")
                 .retainResponseHeaders(true).setBody("xxxxx", mediaType.toString());
         request.headerHolder().add("sale" , "2").add("ca-xx" , "ca-xx");
         request.queryParamHolder().add("sa" , "sa").add("ds" , "ds");

@@ -5,9 +5,9 @@ import org.junit.Ignore;
 import org.junit.Test;
 import top.jfunc.common.http.base.Config;
 import top.jfunc.common.http.base.FormFile;
+import top.jfunc.common.http.holderrequest.DefaultBodyRequest;
 import top.jfunc.common.http.interfacing.HttpServiceCreator;
-import top.jfunc.common.http.holderrequest.impl.HolderGetRequest;
-import top.jfunc.common.http.holderrequest.impl.HolderPostBodyRequest;
+import top.jfunc.common.http.request.DefaultRequest;
 import top.jfunc.common.http.smart.ApacheSmartHttpClient;
 import top.jfunc.common.http.smart.Response;
 
@@ -38,17 +38,17 @@ public class HttpServiceCreatorTest {
 
     @Test
     public void testRequest(){
-        Response zzzzzz = jfunc.request(HolderGetRequest.of("https://www.baidu.com"));
+        Response zzzzzz = jfunc.request(DefaultRequest.of("https://www.baidu.com"));
         System.out.println(zzzzzz);
     }
     @Test
     public void testRequestHeader(){
-        Response zzzzzz = jfunc.request(HolderGetRequest.of("/get/query") , "kkkk");
+        Response zzzzzz = jfunc.request(DefaultRequest.of("/get/query") , "kkkk");
         System.out.println(zzzzzz);
     }
     @Test
     public void testRequestPost(){
-        HolderPostBodyRequest bodyRequest = HolderPostBodyRequest.of("/post/body");
+        DefaultBodyRequest bodyRequest = DefaultBodyRequest.of("/post/body");
         bodyRequest.bodyHolder().setBody("xxsdasdadxx");
         Response zzzzzz = jfunc.post(bodyRequest);
         System.out.println(zzzzzz);
