@@ -1,6 +1,8 @@
 package top.jfunc.http.holder;
 
 
+import top.jfunc.http.holderrequest.HttpRequest;
+
 /**
  * 属性处理器
  * 可以在请求的时候设置属性，在其他的地方比如拦截器中可以获取到，便于统一处理
