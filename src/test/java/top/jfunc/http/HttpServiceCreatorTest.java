@@ -1,0 +1,118 @@
+package top.jfunc.http;
+
+import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
+import top.jfunc.http.base.Config;
+import top.jfunc.http.base.FormFile;
+import top.jfunc.http.holderrequest.DefaultBodyRequest;
+import top.jfunc.http.interfacing.HttpServiceCreator;
+import top.jfunc.http.request.DefaultRequest;
+import top.jfunc.http.smart.ApacheSmartHttpClient;
+import top.jfunc.http.response.Response;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * @author xiongshiyan at 2019/5/24 , contact me with email yanshixiong@126.com or phone 15208384257
+ */
+@Ignore
+public class HttpServiceCreatorTest {
+    Map<String , String> map = new HashMap<>();
+    {
+        map.put("xx" , "xxx");
+        map.put("yy" , "yy");
+    }
+    InterfaceForTestJfunc jfunc;
+    @Before
+    public void init(){
+        Config config = Config.defaultConfig().setBaseUrl("http://localhost:8080/http-server-test/");
+        ApacheSmartHttpClient smartHttpClient = new ApacheSmartHttpClient();
+        smartHttpClient.setConfig(config);
+        HttpServiceCreator httpServiceCreator = new HttpServiceCreator().setSmartHttpClient(smartHttpClient);
+        jfunc = httpServiceCreator.create(InterfaceForTestJfunc.class);
+    }
+
+    @Test
+    public void testRequest(){
+        Response zzzzzz = jfunc.request(DefaultRequest.of("https://www.baidu.com"));
+        System.out.println(zzzzzz);
+    }
+    @Test
+    public void testRequestHeader(){
+        Response zzzzzz = jfunc.request(DefaultRequest.of("/get/query") , "kkkk");
+        System.out.println(zzzzzz);
+    }
+    @Test
+    public void testRequestPost(){
+        DefaultBodyRequest bodyRequest = DefaultBodyRequest.of("/post/body");
+        bodyRequest.bodyHolder().setBody("xxsdasdadxx");
+        Response zzzzzz = jfunc.post(bodyRequest);
+        System.out.println(zzzzzz);
+    }
+    @Test
+    public void testPath(){
+        Response zzzzz = jfunc.list("query", 1);
+        System.out.println(zzzzz);
+    }
+    @Test
+    public void testQuery(){
+        Response query = jfunc.url("get/query");
+        System.out.println(query);
+    }
+    @Test
+    public void testQueryMap(){
+        Response response = jfunc.queryMap(map);
+        System.out.println(response);
+    }
+    @Test
+    public void testHeader(){
+        Response header = jfunc.header("xx");
+        System.out.println(header);
+    }
+    @Test
+    public void testHeaders(){
+        Response headers = jfunc.headers("nakedddd");
+        System.out.println(headers);
+    }
+    @Test
+    public void testHeaderMap(){
+        Response headerMap = jfunc.headerMap(map);
+        System.out.println(headerMap);
+    }
+    @Test
+    public void testDownLoad() throws IOException{
+        Response download = jfunc.download();
+        System.out.println(download.asFile(new File("xx.txt")));
+    }
+    @Test
+    public void testPostBody(){
+        Response post = jfunc.post("body", "嘻嘻嘻嘻嘻嘻嘻");
+        System.out.println(post);
+    }
+    @Test
+    public void testForm(){
+        Response xx = jfunc.form("xx", 15);
+        System.out.println(xx);
+    }
+    @Test
+    public void testFormMap(){
+        Response formMap = jfunc.formMap(map);
+        System.out.println(formMap);
+    }
+    @Test
+    public void testUpload() throws IOException{
+        FormFile formFile = new FormFile(new File("F:\\xiongshiyan\\material\\构建工具\\Grunt\\code\\自动化构建工具说明.txt") , "file",null);
+        Response upload = jfunc.upload(formFile);
+        System.out.println(upload);
+    }
+    @Test
+    public void testUploadWithParam() throws IOException{
+        FormFile formFile = new FormFile(new File("F:\\xiongshiyan\\material\\构建工具\\Grunt\\code\\自动化构建工具说明.txt") , "file",null);
+        Response upload = jfunc.uploadWithParam("xxxxxxx" , 12 , formFile);
+        System.out.println(upload);
+    }
+}
