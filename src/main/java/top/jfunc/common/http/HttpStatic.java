@@ -7,7 +7,6 @@ import top.jfunc.common.http.request.StringBodyRequest;
 import top.jfunc.common.http.request.UploadRequest;
 import top.jfunc.common.http.smart.NativeSmartHttpClient;
 import top.jfunc.common.http.response.Response;
-import top.jfunc.common.http.smart.SmartHttpClient;
 import top.jfunc.common.utils.MultiValueMap;
 
 import java.io.File;

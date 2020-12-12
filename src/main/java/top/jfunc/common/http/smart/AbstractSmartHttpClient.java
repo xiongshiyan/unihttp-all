@@ -1,5 +1,8 @@
 package top.jfunc.common.http.smart;
 
+import top.jfunc.common.http.HttpRequestHttpClient;
+import top.jfunc.common.http.SimpleHttpClient;
+import top.jfunc.common.http.SmartHttpClient;
 import top.jfunc.common.http.base.*;
 import top.jfunc.common.http.component.*;
 import top.jfunc.common.http.request.HttpRequest;
