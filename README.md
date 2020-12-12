@@ -9,6 +9,9 @@
 
 这一套接口基本覆盖了一个Http请求的所有参数，接口的使用也是简单的、统一的、一致的、连缀的。对URL、Header、Body、Form、文件上传提供最大的支持。
 
+uni既作unique，是一个比较特别的项目。
+   又作unify，希望统一http的请求方式，统一市面上的http客户端实现。
+
 项目的两个亮点：
 1. **http语义化的接口设计，简单的、统一的、一致的、连缀的接口使用体验**
 2. **可以做到无代码修改切换Http请求的实现，而无需散弹式修改**。
@@ -45,12 +48,12 @@
 
 ##### 项目管理工具导入 
 
-项目已经发布至 `jcenter` 和 `maven` 中央仓库 最新版本version: **1.2.12**
+项目已经发布至 `jcenter` 和 `maven` 中央仓库 最新版本version: **2.0.0**
 
 Gradle:
 
 ```dsl
-compile 'top.jfunc.network:httpclient:${version}'
+compile 'top.jfunc.network:unihttp-all:${version}'
 ```
 
 Maven:
@@ -59,7 +62,7 @@ Maven:
 <!-- https://mvnrepository.com/artifact/top.jfunc.network/httpclient -->
 <dependency>
     <groupId>top.jfunc.network</groupId>
-    <artifactId>httpclient</artifactId>
+    <artifactId>unihttp-all</artifactId>
     <version>${version}</version>
 </dependency>
 ```
@@ -67,7 +70,7 @@ Maven:
 如果想去掉不必要的jar包引入可以排除特定的 
 
 ```
-compile ('top.jfunc.network:httpclient:${version}'){
+compile ('top.jfunc.network:unihttp-all:${version}'){
         ? exclude group:'org.apache.httpcomponents'
         ? exclude group:'com.squareup.okhttp3'
         ? exclude group:'org.jodd'
@@ -76,7 +79,7 @@ compile ('top.jfunc.network:httpclient:${version}'){
 ```
 <dependency>
     <groupId>top.jfunc.network</groupId>
-    <artifactId>httpclient</artifactId>
+    <artifactId>unihttp-all</artifactId>
     <version>${version}</version>
     <exclusions>  
         <exclusion>  ?
@@ -113,7 +116,7 @@ public class HttpConfig {
     @Bean("smartHttpClient")
     public SmartHttpClient smartHttpClient(){
         //如果要更换http的实现或者做更多的事情，可以对此bean进行配置
-        NativeSmartHttpClient smartHttpClient = new NativeSmartHttpClient();
+        JdkSmartHttpClient smartHttpClient = new JdkSmartHttpClient();
         // new OkHttp3SmartHttpClient();
         // new ApacheSmartHttpClient(){
                 //重写某些方法
@@ -261,7 +264,7 @@ http.setConfig(Config.defaultConfig()
         @Bean
         public SmartHttpClient smartHttpClient(){
             Config config = Config.defaultConfig().setBaseUrl("xxxxx);
-            NativeSmartHttpClient smartHttpClient = new NativeSmartHttpClient();
+            JdkSmartHttpClient smartHttpClient = new JdkSmartHttpClient();
             smartHttpClient.setConfig(config);
             return smartHttpClient;
         }

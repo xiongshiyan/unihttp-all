@@ -1,8 +1,6 @@
 package top.jfunc.http;
 
 import org.junit.Test;
-import top.jfunc.http.HttpDelegate;
-import top.jfunc.http.SmartHttpClient;
 
 public class DelegateTest {
     @Test
