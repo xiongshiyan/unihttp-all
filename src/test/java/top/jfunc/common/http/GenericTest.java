@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import top.jfunc.common.http.base.Config;
 import top.jfunc.common.http.base.MediaType;
-import top.jfunc.common.http.smart.Request;
+import top.jfunc.common.http.holderrequest.Request;
 
 /**
  * @author xiongshiyan at 2019/6/21 , contact me with email yanshixiong@126.com or phone 15208384257

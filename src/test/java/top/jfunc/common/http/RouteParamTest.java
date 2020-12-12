@@ -3,8 +3,8 @@ package top.jfunc.common.http;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
-import top.jfunc.common.http.smart.Request;
-import top.jfunc.common.http.smart.Response;
+import top.jfunc.common.http.holderrequest.Request;
+import top.jfunc.common.http.response.Response;
 
 /**
  * @author xiongshiyan at 2019/5/16 , contact me with email yanshixiong@126.com or phone 15208384257

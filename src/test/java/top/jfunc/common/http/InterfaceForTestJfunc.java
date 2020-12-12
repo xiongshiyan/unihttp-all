@@ -4,7 +4,7 @@ import top.jfunc.common.http.annotation.*;
 import top.jfunc.common.http.base.FormFile;
 import top.jfunc.common.http.request.HttpRequest;
 import top.jfunc.common.http.request.StringBodyRequest;
-import top.jfunc.common.http.smart.Response;
+import top.jfunc.common.http.response.Response;
 
 import java.util.Map;
 

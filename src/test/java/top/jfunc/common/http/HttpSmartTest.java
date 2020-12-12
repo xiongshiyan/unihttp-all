@@ -8,6 +8,8 @@ import top.jfunc.common.http.base.FormFile;
 import top.jfunc.common.http.base.MediaType;
 import top.jfunc.common.http.base.Method;
 import top.jfunc.common.http.holderrequest.DefaultBodyRequest;
+import top.jfunc.common.http.holderrequest.Request;
+import top.jfunc.common.http.response.Response;
 import top.jfunc.common.http.smart.*;
 
 import java.io.File;

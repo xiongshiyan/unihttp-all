@@ -9,6 +9,7 @@ import top.jfunc.common.http.base.Config;
 import top.jfunc.common.http.base.HttpHeaders;
 import top.jfunc.common.http.holderrequest.DefaultRequest;
 import top.jfunc.common.http.request.HttpRequest;
+import top.jfunc.common.http.response.Response;
 import top.jfunc.common.http.smart.*;
 
 import java.io.IOException;

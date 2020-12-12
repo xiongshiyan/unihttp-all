@@ -3,7 +3,7 @@ package top.jfunc.common.http;
 import org.junit.Ignore;
 import org.junit.Test;
 import top.jfunc.common.http.base.FormFile;
-import top.jfunc.common.http.holderrequest.DefaultUpLoadRequest;
+import top.jfunc.common.http.holderrequest.DefaultUploadRequest;
 import top.jfunc.common.http.request.UploadRequest;
 import top.jfunc.common.utils.ObjectUtil;
 
@@ -16,14 +16,14 @@ import java.io.File;
 public class CloneTest {
     @Test
     public void testClone() throws Exception{
-        top.jfunc.common.http.request.DefaultUpLoadRequest defaultDefaultUpLoadRequest = top.jfunc.common.http.request.DefaultUpLoadRequest.of("sss");
-        defaultDefaultUpLoadRequest.addFormParam("k1" , "v1");
-        defaultDefaultUpLoadRequest.setParamCharset("dsd");
-        defaultDefaultUpLoadRequest.addFormFile(new FormFile(new File("C:\\Users\\xiongshiyan\\Desktop\\加班.txt") , "dsad" ,"sda"));
-        defaultDefaultUpLoadRequest.followRedirects(true);
+        top.jfunc.common.http.request.DefaultUploadRequest defaultDefaultUploadRequest = top.jfunc.common.http.request.DefaultUploadRequest.of("sss");
+        defaultDefaultUploadRequest.addFormParam("k1" , "v1");
+        defaultDefaultUploadRequest.setParamCharset("dsd");
+        defaultDefaultUploadRequest.addFormFile(new FormFile(new File("C:\\Users\\xiongshiyan\\Desktop\\加班.txt") , "dsad" ,"sda"));
+        defaultDefaultUploadRequest.followRedirects(true);
 
 
-        top.jfunc.common.http.request.DefaultUpLoadRequest clone = defaultDefaultUpLoadRequest.clone();
+        top.jfunc.common.http.request.DefaultUploadRequest clone = defaultDefaultUploadRequest.clone();
 
         clone.followRedirects(false);
         clone.retainResponseHeaders(true);
@@ -34,14 +34,14 @@ public class CloneTest {
     }
     @Test
     public void testClone2() throws Exception{
-        DefaultUpLoadRequest defaultUpLoadRequest = DefaultUpLoadRequest.of("sss");
-        defaultUpLoadRequest.addFormParam("k1" , "v1");
-        defaultUpLoadRequest.setParamCharset("dsd");
-        defaultUpLoadRequest.addFormFile(new FormFile(new File("C:\\Users\\xiongshiyan\\Desktop\\加班.txt") , "dsad" ,"sda"));
-        defaultUpLoadRequest.followRedirects(true);
+        DefaultUploadRequest defaultUploadRequest = DefaultUploadRequest.of("sss");
+        defaultUploadRequest.addFormParam("k1" , "v1");
+        defaultUploadRequest.setParamCharset("dsd");
+        defaultUploadRequest.addFormFile(new FormFile(new File("C:\\Users\\xiongshiyan\\Desktop\\加班.txt") , "dsad" ,"sda"));
+        defaultUploadRequest.followRedirects(true);
 
 
-        DefaultUpLoadRequest clone = defaultUpLoadRequest.clone();
+        DefaultUploadRequest clone = defaultUploadRequest.clone();
 
         clone.followRedirects(false);
         clone.retainResponseHeaders(true);
@@ -53,7 +53,7 @@ public class CloneTest {
 
     @Test
     public void testClone3() throws Exception{
-        UploadRequest upLoadRequest = top.jfunc.common.http.request.DefaultUpLoadRequest.of("sss");
+        UploadRequest upLoadRequest = top.jfunc.common.http.request.DefaultUploadRequest.of("sss");
         upLoadRequest.addFormParam("k1" , "v1");
         upLoadRequest.setParamCharset("dsd");
         upLoadRequest.addFormFile(new FormFile(new File("C:\\Users\\xiongshiyan\\Desktop\\加班.txt") , "dsad" ,"sda"));

@@ -6,8 +6,8 @@ import top.jfunc.common.http.download.Downloader;
 import top.jfunc.common.http.download.InterruptBaseDownloadFileDownloader;
 import top.jfunc.common.http.download.InterruptBaseConfFileDownloader;
 import top.jfunc.common.http.download.MultiThreadDownloader;
+import top.jfunc.common.http.request.DownloadRequest;
 import top.jfunc.common.http.request.RequestCreator;
-import top.jfunc.common.http.request.DefaultDownLoadRequest;
 import top.jfunc.common.http.smart.*;
 import top.jfunc.common.utils.CommonUtil;
 
@@ -20,7 +20,7 @@ import java.io.IOException;
 @Ignore
 public class DownloadTest {
     private static final String FILE = "https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=974248807,3098128878&fm=26&gp=0.jpg";
-    DefaultDownLoadRequest defaultDownLoadRequest = RequestCreator.download(FILE
+    DownloadRequest defaultDownLoadRequest = RequestCreator.download(FILE
         , new File("C:\\Users\\xiongshiyan\\Desktop\\" + CommonUtil.randomString(16) + ".jpg"));
     @Test
     public void testCommonDownloadJDK() throws IOException{
@@ -116,7 +116,7 @@ public class DownloadTest {
     private void interruptBaseConfFileDownloader(SmartHttpClient smartHttpClient) throws IOException{
         long l = System.currentTimeMillis();
         Downloader downloader = new InterruptBaseConfFileDownloader(smartHttpClient , 1024);
-        DefaultDownLoadRequest defaultDownLoadRequest = RequestCreator.download(FILE
+        DownloadRequest defaultDownLoadRequest = RequestCreator.download(FILE
                 , new File("C:\\Users\\xiongshiyan\\Desktop\\1.jpg"));
         downloader.download(defaultDownLoadRequest);
         System.out.println(System.currentTimeMillis() - l);
@@ -148,7 +148,7 @@ public class DownloadTest {
     private void interruptBaseDownloadFileDownloader(SmartHttpClient smartHttpClient) throws IOException{
         long l = System.currentTimeMillis();
         Downloader downloader = new InterruptBaseDownloadFileDownloader(smartHttpClient , 1024);
-        DefaultDownLoadRequest defaultDownLoadRequest = RequestCreator.download(FILE
+        DownloadRequest defaultDownLoadRequest = RequestCreator.download(FILE
                 , new File("C:\\Users\\xiongshiyan\\Desktop\\2.jpg"));
         downloader.download(defaultDownLoadRequest);
         System.out.println(System.currentTimeMillis() - l);
@@ -178,7 +178,7 @@ public class DownloadTest {
 
     private void getNetFileLength(SmartHttpClient smartHttpClient) throws IOException{
         Downloader downloader = new InterruptBaseDownloadFileDownloader(smartHttpClient , 1024);
-        DefaultDownLoadRequest defaultDownLoadRequest = RequestCreator.download(FILE
+        DownloadRequest defaultDownLoadRequest = RequestCreator.download(FILE
                 , new File("C:\\Users\\xiongshiyan\\Desktop\\3.jpg"));
         long netFileLength = downloader.getNetFileLength(defaultDownLoadRequest);
         System.out.println(netFileLength);

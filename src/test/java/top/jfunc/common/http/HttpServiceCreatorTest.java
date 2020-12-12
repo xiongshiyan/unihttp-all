@@ -9,7 +9,7 @@ import top.jfunc.common.http.holderrequest.DefaultBodyRequest;
 import top.jfunc.common.http.interfacing.HttpServiceCreator;
 import top.jfunc.common.http.request.DefaultRequest;
 import top.jfunc.common.http.smart.ApacheSmartHttpClient;
-import top.jfunc.common.http.smart.Response;
+import top.jfunc.common.http.response.Response;
 
 import java.io.File;
 import java.io.IOException;

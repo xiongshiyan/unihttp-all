@@ -2,6 +2,8 @@ package top.jfunc.common.http;
 
 import org.junit.Test;
 import top.jfunc.common.http.base.Config;
+import top.jfunc.common.http.holderrequest.Request;
+import top.jfunc.common.http.response.Response;
 import top.jfunc.common.http.smart.*;
 
 import java.io.IOException;

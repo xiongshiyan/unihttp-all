@@ -10,6 +10,7 @@ import top.jfunc.common.http.base.Config;
 import top.jfunc.common.http.cookie.*;
 import top.jfunc.common.http.holderrequest.DefaultRequest;
 import top.jfunc.common.http.interceptor.Interceptor;
+import top.jfunc.common.http.response.Response;
 import top.jfunc.common.http.smart.*;
 import top.jfunc.common.utils.MultiValueMap;
 
