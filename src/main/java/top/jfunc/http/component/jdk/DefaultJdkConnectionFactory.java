@@ -2,6 +2,7 @@ package top.jfunc.http.component.jdk;
 
 import top.jfunc.http.base.*;
 import top.jfunc.http.component.AbstractRequesterFactory;
+import top.jfunc.http.config.Config;
 import top.jfunc.http.request.HttpRequest;
 import top.jfunc.http.util.NativeUtil;
 import top.jfunc.common.utils.ObjectUtil;

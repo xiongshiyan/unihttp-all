@@ -2,6 +2,7 @@ package top.jfunc.http.interfacing;
 
 import top.jfunc.http.annotation.*;
 import top.jfunc.http.base.*;
+import top.jfunc.http.config.Config;
 import top.jfunc.http.holderrequest.DefaultBodyRequest;
 import top.jfunc.http.holderrequest.DefaultRequest;
 import top.jfunc.http.holderrequest.DefaultFormBodyRequest;

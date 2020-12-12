@@ -3,6 +3,8 @@ package top.jfunc.http.request;
 import top.jfunc.http.base.*;
 import top.jfunc.common.utils.MapUtil;
 import top.jfunc.common.utils.MultiValueMap;
+import top.jfunc.http.config.Config;
+import top.jfunc.http.config.ConfigAccessor;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLContext;
@@ -18,7 +20,7 @@ import java.util.Map;
  * @since 1.1.6
  * @author xiongshiyan at 2019/5/18 , contact me with email yanshixiong@126.com or phone 15208384257
  */
-public interface HttpRequest extends ConfigAccessor , Cloneable{
+public interface HttpRequest extends ConfigAccessor, Cloneable{
     /**
      * 请求的URL
      * @return 请求的URL

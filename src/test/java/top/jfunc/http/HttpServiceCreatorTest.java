@@ -3,7 +3,7 @@ package top.jfunc.http;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-import top.jfunc.http.base.Config;
+import top.jfunc.http.config.Config;
 import top.jfunc.http.base.FormFile;
 import top.jfunc.http.holderrequest.DefaultBodyRequest;
 import top.jfunc.http.interfacing.HttpServiceCreator;

@@ -5,6 +5,8 @@ import top.jfunc.http.SimpleHttpClient;
 import top.jfunc.http.SmartHttpClient;
 import top.jfunc.http.base.*;
 import top.jfunc.http.component.*;
+import top.jfunc.http.config.Config;
+import top.jfunc.http.config.ConfigFrozen;
 import top.jfunc.http.request.HttpRequest;
 import top.jfunc.http.request.StringBodyRequest;
 import top.jfunc.http.request.UploadRequest;
