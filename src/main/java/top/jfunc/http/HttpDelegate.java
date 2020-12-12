@@ -19,7 +19,7 @@ public class HttpDelegate {
             "top.jfunc.http.smart.OkHttp3SmartHttpClient",
             "top.jfunc.http.smart.ApacheSmartHttpClient",
             "top.jfunc.http.smart.JoddSmartHttpClient",
-            "top.jfunc.http.smart.NativeSmartHttpClient"};
+            "top.jfunc.http.smart.JdkSmartHttpClient"};
     /**
      * http请求工具代理对象
      */

@@ -6,6 +6,7 @@ import org.junit.Test;
 import top.jfunc.http.config.Config;
 import top.jfunc.http.base.FormFile;
 import top.jfunc.http.holderrequest.DefaultBodyRequest;
+import top.jfunc.http.holderrequest.MutableStringBodyRequest;
 import top.jfunc.http.interfacing.HttpServiceCreator;
 import top.jfunc.http.request.DefaultRequest;
 import top.jfunc.http.smart.ApacheSmartHttpClient;
@@ -48,7 +49,7 @@ public class HttpServiceCreatorTest {
     }
     @Test
     public void testRequestPost(){
-        DefaultBodyRequest bodyRequest = DefaultBodyRequest.of("/post/body");
+        MutableStringBodyRequest bodyRequest = DefaultBodyRequest.of("/post/body");
         bodyRequest.bodyHolder().setBody("xxsdasdadxx");
         Response zzzzzz = jfunc.post(bodyRequest);
         System.out.println(zzzzzz);

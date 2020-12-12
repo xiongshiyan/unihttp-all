@@ -24,7 +24,7 @@ public class ConfigSettingTest {
     }
     @Test
     public void testGetNativeHttp(){
-        NativeSmartHttpClient http = new NativeSmartHttpClient();
+        JdkSmartHttpClient http = new JdkSmartHttpClient();
         testGet(http);
     }
     @Test

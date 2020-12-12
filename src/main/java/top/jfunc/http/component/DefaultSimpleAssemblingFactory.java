@@ -1,12 +1,7 @@
 package top.jfunc.http.component;
 
 import top.jfunc.http.base.FormFile;
-import top.jfunc.http.request.HttpRequest;
-import top.jfunc.http.request.StringBodyRequest;
-import top.jfunc.http.request.UploadRequest;
-import top.jfunc.http.request.DefaultBodyRequest;
-import top.jfunc.http.request.DefaultRequest;
-import top.jfunc.http.request.DefaultUploadRequest;
+import top.jfunc.http.request.*;
 import top.jfunc.common.utils.ArrayUtil;
 import top.jfunc.common.utils.MapUtil;
 import top.jfunc.common.utils.MultiValueMap;
@@ -37,7 +32,7 @@ public class DefaultSimpleAssemblingFactory implements AssemblingFactory {
                                     int readTimeout,
                                     String bodyCharset,
                                     String resultCharset) {
-        DefaultBodyRequest stringBodyRequest = DefaultBodyRequest.of(url);
+        MutableStringBodyRequest stringBodyRequest = DefaultBodyRequest.of(url);
         stringBodyRequest.setBody(body , contentType);
         if(null != bodyCharset){
             stringBodyRequest.setBodyCharset(bodyCharset);

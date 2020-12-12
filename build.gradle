@@ -1,10 +1,10 @@
 def VERSION = '1.2.12'
-def ARTIFACT_ID = 'httpclient'
+def ARTIFACT_ID = 'unihttp-all'
 def GROUP_ID = 'top.jfunc.network'
 def TYPE = 'jar'
 def DESCRIPTION = 'http客户端请求工具类，有多种实现：OkHttp3、ApacheHttpComponents、HttpURLConnection、Jodd-Http，可以随意切换http实现'
-def gitUrl = 'https://gitee.com/xxssyyyyssxx/httpclient.git'
-def siteUrl = 'https://gitee.com/xxssyyyyssxx/httpclient'
+def gitUrl = 'https://gitee.com/xxssyyyyssxx/unihttp-all.git'
+def siteUrl = 'https://gitee.com/xxssyyyyssxx/unihttp-all'
 def REPO_NAME = 'network'
 
 group GROUP_ID
@@ -55,8 +55,8 @@ jar {
         attributes('Email': 'yanshixiong@126.com')
         attributes('Build-By': 'Gradle-4.6')
         attributes('Licences': 'Apache-2.0')
-        attributes('GitUrl-Gitee': 'https://gitee.com/xxssyyyyssxx/httpclient-interfacing')
-        attributes('GitUrl-Github': 'https://github.com/xiongshiyan/httpclient-interfacing')
+        attributes('GitUrl-Gitee': 'https://gitee.com/xxssyyyyssxx/unihttp')
+        attributes('GitUrl-Github': 'https://github.com/xiongshiyan/unihttp')
     }
 }
 

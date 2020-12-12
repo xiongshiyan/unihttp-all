@@ -35,7 +35,7 @@ public class HttpSmartTest {
     }
     @Test
     public void testGetNativeHttp(){
-        NativeSmartHttpClient http = new NativeSmartHttpClient();
+        JdkSmartHttpClient http = new JdkSmartHttpClient();
         http.getConfig().setBaseUrl("http://localhost:8080/http-server-test/");
         testGet(http);
     }
@@ -83,7 +83,7 @@ public class HttpSmartTest {
     }
     @Test
     public void testPostNativeHttp(){
-        SmartHttpClient http = new NativeSmartHttpClient();
+        SmartHttpClient http = new JdkSmartHttpClient();
         testPost(http);
     }
     @Test
@@ -103,7 +103,7 @@ public class HttpSmartTest {
     }
     @Test
     public void testPostGBKNativeHttp(){
-        SmartHttpClient http = new NativeSmartHttpClient();
+        SmartHttpClient http = new JdkSmartHttpClient();
         testPostGBK(http);
     }
     @Test
@@ -163,7 +163,7 @@ public class HttpSmartTest {
     }
     @Test
     public void testUploadLocal(){
-        SmartHttpClient http = new NativeSmartHttpClient();
+        SmartHttpClient http = new JdkSmartHttpClient();
         testUploadImpl(http);
     }
     @Test
@@ -201,7 +201,7 @@ public class HttpSmartTest {
     }
     @Test
     public void testUploadWithParamsLocal(){
-        SmartHttpClient http = new NativeSmartHttpClient();
+        SmartHttpClient http = new JdkSmartHttpClient();
         testUploadImplWithParams(http);
     }
     @Test
@@ -241,7 +241,7 @@ public class HttpSmartTest {
     }
     @Test
     public void testHttpMethodNativeHttp(){
-        SmartHttpClient http = new NativeSmartHttpClient();
+        SmartHttpClient http = new JdkSmartHttpClient();
         testHttpMethod(http);
     }
     @Test
@@ -274,7 +274,7 @@ public class HttpSmartTest {
     }
     @Test
     public void testAllNative() throws Exception{
-        testAll(new NativeSmartHttpClient());
+        testAll(new JdkSmartHttpClient());
     }
     @Test
     public void testAllJodd() throws Exception{
@@ -287,8 +287,8 @@ public class HttpSmartTest {
     private void testAll(SmartHttpClient smartHttpClient) throws Exception{
 
         MediaType mediaType = MediaType.APPLICATION_JSON.withCharset(Config.DEFAULT_CHARSET);
-        DefaultBodyRequest request = DefaultBodyRequest.of("http://localhost:8080/http-server-test/post/all")
-                .retainResponseHeaders(true).setBody("xxxxx", mediaType.toString());
+        top.jfunc.http.holderrequest.MutableStringBodyRequest request = DefaultBodyRequest.of("http://localhost:8080/http-server-test/post/all");
+        request.setBody("xxxxx", mediaType.toString()).retainResponseHeaders(true);
         request.headerHolder().add("sale" , "2").add("ca-xx" , "ca-xx");
         request.queryParamHolder().add("sa" , "sa").add("ds" , "ds");
         Response response = smartHttpClient.post(request);

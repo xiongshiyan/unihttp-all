@@ -50,7 +50,7 @@ public class CookieTest {
     @Test
     public void testCookieNativeHttp()throws Exception{
         //只要设置了CookieStore就支持Cookie
-        SmartHttpClient smartHttpClient = new NativeSmartHttpClient();
+        SmartHttpClient smartHttpClient = new JdkSmartHttpClient();
         smartHttpClient.setConfig(Config.defaultConfig().addInterceptor(cookieInterceptor));
         testCookie(smartHttpClient);
     }

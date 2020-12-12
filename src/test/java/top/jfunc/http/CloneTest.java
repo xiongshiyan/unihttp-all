@@ -16,14 +16,14 @@ import java.io.File;
 public class CloneTest {
     @Test
     public void testClone() throws Exception{
-        top.jfunc.http.request.DefaultUploadRequest defaultDefaultUploadRequest = top.jfunc.http.request.DefaultUploadRequest.of("sss");
+        DefaultUploadRequest defaultDefaultUploadRequest = (DefaultUploadRequest)top.jfunc.http.request.DefaultUploadRequest.of("sss");
         defaultDefaultUploadRequest.addFormParam("k1" , "v1");
         defaultDefaultUploadRequest.setParamCharset("dsd");
         defaultDefaultUploadRequest.addFormFile(new FormFile(new File("C:\\Users\\xiongshiyan\\Desktop\\加班.txt") , "dsad" ,"sda"));
         defaultDefaultUploadRequest.followRedirects(true);
 
 
-        top.jfunc.http.request.DefaultUploadRequest clone = defaultDefaultUploadRequest.clone();
+        UploadRequest clone = defaultDefaultUploadRequest.clone();
 
         clone.followRedirects(false);
         clone.retainResponseHeaders(true);

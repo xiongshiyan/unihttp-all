@@ -11,24 +11,24 @@ import java.net.HttpURLConnection;
  * 使用URLConnection实现的Http请求类
  * @author 熊诗言2020/12/01
  */
-public class NativeSmartHttpClient extends AbstractImplementSmartHttpClient<HttpURLConnection> {
+public class JdkSmartHttpClient extends AbstractImplementSmartHttpClient<HttpURLConnection> {
 
-    public NativeSmartHttpClient(){
+    public JdkSmartHttpClient(){
         super(new DefaultJdkBodyContentCallbackCreator(),
                 new DefaultJdkUploadContentCallbackCreator(),
                 new JdkHttpRequestExecutor());
     }
 
-    public NativeSmartHttpClient(ContentCallbackCreator<HttpURLConnection> bodyContentCallbackCreator,
-                                 ContentCallbackCreator<HttpURLConnection> uploadContentCallbackCreator,
-                                 HttpRequestExecutor<HttpURLConnection> httpRequestExecutor) {
+    public JdkSmartHttpClient(ContentCallbackCreator<HttpURLConnection> bodyContentCallbackCreator,
+                              ContentCallbackCreator<HttpURLConnection> uploadContentCallbackCreator,
+                              HttpRequestExecutor<HttpURLConnection> httpRequestExecutor) {
         super(bodyContentCallbackCreator, uploadContentCallbackCreator, httpRequestExecutor);
     }
 
-    public NativeSmartHttpClient(AssemblingFactory assemblingFactory,
-                                 ContentCallbackCreator<HttpURLConnection> bodyContentCallbackCreator,
-                                 ContentCallbackCreator<HttpURLConnection> uploadContentCallbackCreator,
-                                 HttpRequestExecutor<HttpURLConnection> httpRequestExecutor) {
+    public JdkSmartHttpClient(AssemblingFactory assemblingFactory,
+                              ContentCallbackCreator<HttpURLConnection> bodyContentCallbackCreator,
+                              ContentCallbackCreator<HttpURLConnection> uploadContentCallbackCreator,
+                              HttpRequestExecutor<HttpURLConnection> httpRequestExecutor) {
         super(assemblingFactory, bodyContentCallbackCreator, uploadContentCallbackCreator, httpRequestExecutor);
     }
     ///

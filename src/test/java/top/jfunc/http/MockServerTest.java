@@ -27,7 +27,7 @@ public class MockServerTest {
 
     @Test
     public void testJdk() throws Exception{
-        NativeSmartHttpClient smartHttpClient = new NativeSmartHttpClient();
+        JdkSmartHttpClient smartHttpClient = new JdkSmartHttpClient();
         testAll(smartHttpClient);
     }
     @Test

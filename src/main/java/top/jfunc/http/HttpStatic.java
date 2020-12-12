@@ -2,7 +2,7 @@ package top.jfunc.http;
 
 import top.jfunc.http.base.FormFile;
 import top.jfunc.http.request.*;
-import top.jfunc.http.smart.NativeSmartHttpClient;
+import top.jfunc.http.smart.JdkSmartHttpClient;
 import top.jfunc.http.response.Response;
 import top.jfunc.common.utils.MultiValueMap;
 
@@ -17,7 +17,7 @@ import java.util.Map;
 public class HttpStatic {
     private HttpStatic(){}
 
-    private static SmartHttpClient SMART_HTTP_CLIENT = new NativeSmartHttpClient();
+    private static SmartHttpClient SMART_HTTP_CLIENT = new JdkSmartHttpClient();
     public static SmartHttpClient getSmartHttpClient() { return SMART_HTTP_CLIENT; }
     public static void setSmartHttpClient(SmartHttpClient smartHttpClient){SMART_HTTP_CLIENT = smartHttpClient;}
 

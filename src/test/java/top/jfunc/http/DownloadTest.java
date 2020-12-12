@@ -2,7 +2,6 @@ package top.jfunc.http;
 
 import org.junit.Ignore;
 import org.junit.Test;
-import top.jfunc.http.SmartHttpClient;
 import top.jfunc.http.download.Downloader;
 import top.jfunc.http.download.InterruptBaseDownloadFileDownloader;
 import top.jfunc.http.download.InterruptBaseConfFileDownloader;
@@ -26,7 +25,7 @@ public class DownloadTest {
     @Test
     public void testCommonDownloadJDK() throws IOException{
         //1373
-        NativeSmartHttpClient smartHttpClient = new NativeSmartHttpClient();
+        JdkSmartHttpClient smartHttpClient = new JdkSmartHttpClient();
         commonDownload(smartHttpClient);
     }
     @Test
@@ -60,7 +59,7 @@ public class DownloadTest {
     @Test
     public void testMultiThreadJDK() throws IOException{
         //2007
-        NativeSmartHttpClient smartHttpClient = new NativeSmartHttpClient();
+        JdkSmartHttpClient smartHttpClient = new JdkSmartHttpClient();
         multiThreadDownload(smartHttpClient);
     }
     @Test
@@ -95,7 +94,7 @@ public class DownloadTest {
 
     @Test
     public void testInterruptBaseConfFileDownloaderJDK() throws IOException{
-        NativeSmartHttpClient smartHttpClient = new NativeSmartHttpClient();
+        JdkSmartHttpClient smartHttpClient = new JdkSmartHttpClient();
         interruptBaseConfFileDownloader(smartHttpClient);
     }
     @Test
@@ -127,7 +126,7 @@ public class DownloadTest {
 
     @Test
     public void testInterruptBaseDownloadFileDownloaderJDK() throws IOException{
-        NativeSmartHttpClient smartHttpClient = new NativeSmartHttpClient();
+        JdkSmartHttpClient smartHttpClient = new JdkSmartHttpClient();
         interruptBaseDownloadFileDownloader(smartHttpClient);
     }
     @Test
@@ -158,7 +157,7 @@ public class DownloadTest {
 
     @Test
     public void testGetNetFileLengthJDK() throws IOException{
-        NativeSmartHttpClient smartHttpClient = new NativeSmartHttpClient();
+        JdkSmartHttpClient smartHttpClient = new JdkSmartHttpClient();
         getNetFileLength(smartHttpClient);
     }
     @Test
