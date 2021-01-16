@@ -1,10 +1,10 @@
 package top.jfunc.http.interceptor;
 
+import top.jfunc.common.utils.ArrayUtil;
+import top.jfunc.common.utils.CollectionUtil;
 import top.jfunc.http.config.Config;
 import top.jfunc.http.request.HttpRequest;
 import top.jfunc.http.response.ClientHttpResponse;
-import top.jfunc.common.utils.ArrayUtil;
-import top.jfunc.common.utils.CollectionUtil;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,7 +14,6 @@ import java.util.List;
 /**
  * 提供对多个拦截器的管理，可以新增拦截器，实际拦截执行是委托给各个具体的拦截器
  * @see top.jfunc.http.interceptor.Interceptor
- * @see top.jfunc.http.interceptor.InterceptorAdapter
  * @see Config#getCompositeInterceptor()
  * @author xiongshiyan at 2019/5/31 , contact me with email yanshixiong@126.com or phone 15208384257
  */
