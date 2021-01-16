@@ -1,7 +1,8 @@
 package top.jfunc.http.holderrequest;
 
-import top.jfunc.http.holder.*;
+import top.jfunc.common.utils.MapUtil;
 import top.jfunc.common.utils.MultiValueMap;
+import top.jfunc.http.holder.*;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLContext;
@@ -307,6 +308,12 @@ public interface HttpRequest extends top.jfunc.http.request.HttpRequest {
     default HttpRequest addAttribute(String key, Object value){
         attributeHolder().put(key , value);
         return this;
+    }
+
+    @Override
+    default Object getAttribute(String key){
+        Map<String, Object> map = attributeHolder().getMap();
+        return MapUtil.isEmpty(map) ? null : map.get(key);
     }
 
     /**

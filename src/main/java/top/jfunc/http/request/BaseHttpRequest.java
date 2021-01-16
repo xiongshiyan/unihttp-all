@@ -1,10 +1,10 @@
 package top.jfunc.http.request;
 
 import top.jfunc.common.ChainCall;
-import top.jfunc.http.config.Config;
 import top.jfunc.common.utils.ArrayListMultiValueMap;
 import top.jfunc.common.utils.MapUtil;
 import top.jfunc.common.utils.MultiValueMap;
+import top.jfunc.http.config.Config;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLContext;
@@ -16,7 +16,7 @@ import java.util.Map;
 /**
  * @author xiongshiyan at 2019/7/5 , contact me with email yanshixiong@126.com or phone 15208384257
  */
-public abstract class BaseHttpRequest<THIS extends BaseHttpRequest> extends AbstractHttpRequest<THIS> implements HttpRequest , ChainCall<THIS> {
+public abstract class BaseHttpRequest<THIS extends BaseHttpRequest> extends AbstractHttpRequest<THIS> implements HttpRequest, ChainCall<THIS> {
     /**
      * 设置的URL
      */
@@ -221,6 +221,11 @@ public abstract class BaseHttpRequest<THIS extends BaseHttpRequest> extends Abst
         }
         attributes.put(key, value);
         return myself();
+    }
+
+    @Override
+    public Object getAttribute(String key) {
+        return null == attributes ? null : attributes.get(key);
     }
 
     @Override

@@ -1,8 +1,9 @@
 package top.jfunc.http.holderrequest;
 
+import top.jfunc.common.utils.MapUtil;
+import top.jfunc.common.utils.MultiValueMap;
 import top.jfunc.http.holder.*;
 import top.jfunc.http.request.AbstractHttpRequest;
-import top.jfunc.common.utils.MultiValueMap;
 
 import java.net.URL;
 import java.util.Map;
@@ -131,6 +132,11 @@ public abstract class BaseHttpRequest<THIS extends BaseHttpRequest> extends Abst
         return myself();
     }
 
+    @Override
+    public Object getAttribute(String key) {
+        Map<String, Object> map = attributeHolder().getMap();
+        return MapUtil.isEmpty(map) ? null : map.get(key);
+    }
 
     ///////////////////////////////////通过设置Holder的实现改变默认行为///////////////////////////////////////
 

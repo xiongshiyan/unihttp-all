@@ -1,10 +1,13 @@
 package top.jfunc.http.request;
 
-import top.jfunc.http.base.*;
 import top.jfunc.common.utils.MapUtil;
 import top.jfunc.common.utils.MultiValueMap;
+import top.jfunc.http.base.MediaType;
+import top.jfunc.http.base.Method;
+import top.jfunc.http.base.ProxyInfo;
 import top.jfunc.http.config.Config;
 import top.jfunc.http.config.ConfigAccessor;
+import top.jfunc.http.ssl.SSLSocketFactoryBuilder;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLContext;
@@ -340,6 +343,15 @@ public interface HttpRequest extends ConfigAccessor, Cloneable{
      * @return this
      */
     HttpRequest addAttribute(String key, Object value);
+    Object getAttribute(String key);
+    @SuppressWarnings("unchecked")
+    default <A> A getAttributeAs(String key){
+        Object attribute = getAttribute(key);
+        if(null == attribute){
+            return null;
+        }
+        return (A)attribute;
+    }
 
     /**
      * 获取设置的属性,maybe null
