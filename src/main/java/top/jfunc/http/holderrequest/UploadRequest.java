@@ -1,9 +1,11 @@
 package top.jfunc.http.holderrequest;
 
+import top.jfunc.common.utils.MultiValueMap;
 import top.jfunc.http.base.FormFile;
 import top.jfunc.http.holder.FormFileHolder;
 import top.jfunc.http.holder.ParamHolder;
-import top.jfunc.common.utils.MultiValueMap;
+
+import java.util.Map;
 
 /**
  * 文件上传请求
@@ -17,12 +19,34 @@ public interface UploadRequest extends HttpRequest, top.jfunc.http.request.Uploa
     ParamHolder formParamHolder();
 
     /**
-     * Form参数
+     * 获取Form参数
      * @return Form参数
      */
     @Override
     default MultiValueMap<String, String> getFormParams(){
         return formParamHolder().get();
+    }
+
+    /**
+     * 设置form参数
+     * @param formParams formParams
+     * @return this
+     */
+    @Override
+    default UploadRequest setFormParams(Map<String, String> formParams) {
+        formParamHolder().set(formParams);
+        return this;
+    }
+
+    /**
+     * 设置form参数
+     * @param formParams formParams
+     * @return this
+     */
+    @Override
+    default UploadRequest setFormParams(MultiValueMap<String, String> formParams) {
+        formParamHolder().set(formParams);
+        return this;
     }
 
     /**
