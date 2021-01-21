@@ -1,7 +1,7 @@
 package top.jfunc.http.request;
 
-import top.jfunc.http.base.FormFile;
 import top.jfunc.common.utils.MultiValueMap;
+import top.jfunc.http.base.FormFile;
 
 import java.util.Map;
 
@@ -18,6 +18,20 @@ public interface UploadRequest extends HttpRequest {
     MultiValueMap<String, String> getFormParams();
 
     /**
+     * 设置form参数
+     * @param formParams formParams
+     * @return this
+     */
+    UploadRequest setFormParams(MultiValueMap<String, String> formParams);
+
+    /**
+     * 设置form参数
+     * @param formParams formParams
+     * @return this
+     */
+    UploadRequest setFormParams(Map<String, String> formParams);
+
+    /**
      * 新增form参数
      * @param key key
      * @param value value
@@ -25,20 +39,6 @@ public interface UploadRequest extends HttpRequest {
      * @return this
      */
     UploadRequest addFormParam(String key, String value, String... values);
-
-    /**
-     * 设置form参数
-     * @param formParams formParams
-     * @return this
-     */
-    UploadRequest setFormParams(MultiValueMap<String , String> formParams);
-
-    /**
-     * 设置form参数
-     * @param formParams formParams
-     * @return this
-     */
-    UploadRequest setFormParams(Map<String , String> formParams);
 
     /**
      * 获取charset

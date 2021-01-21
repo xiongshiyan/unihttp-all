@@ -1,8 +1,10 @@
 package top.jfunc.http.request;
 
-import top.jfunc.http.config.Config;
+import top.jfunc.common.utils.ArrayListMultiValueMap;
+import top.jfunc.common.utils.MapUtil;
+import top.jfunc.common.utils.MultiValueMap;
 import top.jfunc.http.base.FormFile;
-import top.jfunc.common.utils.*;
+import top.jfunc.http.config.Config;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -41,12 +43,6 @@ public class DefaultUploadRequest extends BaseHttpRequest<DefaultUploadRequest> 
     }
 
     @Override
-    public UploadRequest addFormParam(String key, String value, String... values) {
-        formParams.add(key, value, values);
-        return myself();
-    }
-
-    @Override
     public UploadRequest setFormParams(MultiValueMap<String, String> formParams) {
         this.formParams = formParams;
         return myself();
@@ -57,6 +53,12 @@ public class DefaultUploadRequest extends BaseHttpRequest<DefaultUploadRequest> 
         if(MapUtil.notEmpty(formParams)){
             this.formParams = ArrayListMultiValueMap.fromMap(formParams);
         }
+        return myself();
+    }
+
+    @Override
+    public UploadRequest addFormParam(String key, String value, String... values) {
+        formParams.add(key, value, values);
         return myself();
     }
 
