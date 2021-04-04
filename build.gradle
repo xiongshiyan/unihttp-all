@@ -1,4 +1,4 @@
-def VERSION = '2.0.1'
+def VERSION = '2.0.2'
 def ARTIFACT_ID = 'unihttp-all'
 def GROUP_ID = 'top.jfunc.network'
 def TYPE = 'jar'
@@ -15,10 +15,11 @@ buildscript {
         mavenLocal()
         mavenCentral()
         jcenter()
+        maven { url 'https://jitpack.io' }
     }
 
     ext{
-        CommonUtilVersion           = '1.8.3.5'
+        CommonUtilVersion           = 'v1.8.6'
         OkHttp3Version              = '3.14.9'
         JoddVersion                 = '5.1.5'
         ApacheHttpComponentsVersion = '4.5.12'
@@ -68,10 +69,11 @@ repositories {
     mavenLocal()
     mavenCentral()
     jcenter()
+    maven { url 'https://jitpack.io' }
 }
 dependencies {
 
-    compile ("top.jfunc.common:utils:${CommonUtilVersion}")
+    compile ("com.gitee.xxssyyyyssxx:utils:${CommonUtilVersion}")
 
     compile ("com.squareup.okhttp3:okhttp:${OkHttp3Version}")
     compile ("org.apache.httpcomponents:httpclient:${ApacheHttpComponentsVersion}"){
@@ -99,16 +101,16 @@ def NEXUS_USERNAME='admin'
 //登录nexus oss的密码
 def NEXUS_PASSWORD='admin123'
 
-uploadArchives {
+/*uploadArchives {
     configuration = configurations.archives
     repositories {
         mavenDeployer {
-            /*snapshotRepository(url: MAVEN_REPO_SNAPSHOT_URL) {
+            *//*snapshotRepository(url: MAVEN_REPO_SNAPSHOT_URL) {
                 authentication(userName: NEXUS_USERNAME, password: NEXUS_PASSWORD)
             }
             repository(url: MAVEN_REPO_RELEASE_URL) {
                 authentication(userName: NEXUS_USERNAME, password: NEXUS_PASSWORD)
-            }*/
+            }*//*
             repository(url: uri('C:\\Users\\xiongshiyan\\.m2\\repository')) //定义本地maven仓库的地址
 //            repository(url: uri('C:\\Users\\xiongshiyan\\.gradle\\caches\\modules-2\\files-2.1')) //定义本地Gradle仓库的地址
             pom.project {
@@ -120,7 +122,7 @@ uploadArchives {
             }
         }
     }
-}
+}*/
 
 
 tasks.withType(JavaCompile) {
