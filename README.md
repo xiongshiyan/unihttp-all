@@ -49,12 +49,17 @@ uni既作unique，是一个比较特别的项目。
 
 ##### 项目管理工具导入 
 
-项目已经发布至 `jcenter` 和 `maven` 中央仓库 最新版本version: **2.0.1**
+项目已经发布至 `jcenter`、`mavenCentral` （2.0.1之前）和jitpack（v2.0.2开始）。
 
 Gradle:
 
+【mavenCentral和jcenter】
 ```dsl
 compile 'top.jfunc.network:unihttp-all:${version}'
+```
+【jitpack】
+```dsl
+compile 'com.gitee.xxssyyyyssxx.unihttp-all:${version}'
 ```
 
 Maven:
