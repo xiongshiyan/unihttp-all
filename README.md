@@ -2,8 +2,6 @@
 ## Define HttpClient's Abstract Interface And Provide Multiple Implementations
 
 ### introduction
-[![](https://jitpack.io/v/com.gitee.xxssyyyyssxx/unihttp-all.svg)](https://jitpack.io/#com.gitee.xxssyyyyssxx/unihttp-all)
-
 
 本项目针对http协议定义了所有http实现之上的接口来描述一个http请求，使用者只需要面对同一套语义化的接口，
 如果需要切换http的实现，可以做到完全无代码修改。支持GET、POST、文件上传下载等，目前适配了以下项目：
@@ -51,7 +49,7 @@ uni既作unique，是一个比较特别的项目。
 
 ##### 项目管理工具导入 
 
-项目已经发布至 `jcenter`、`mavenCentral` （2.0.1之前）和jitpack（v2.0.2开始）。
+项目已经发布至 `jcenter`、`mavenCentral` （2.0.1之前）和jitpack（v2.0.2开始）[![](https://jitpack.io/v/com.gitee.xxssyyyyssxx/unihttp-all.svg)](https://jitpack.io/#com.gitee.xxssyyyyssxx/unihttp-all)
 
 Gradle:
 
