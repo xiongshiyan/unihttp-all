@@ -1,4 +1,4 @@
-def VERSION = '2.0.2'
+def VERSION = '2.0.3'
 def ARTIFACT_ID = 'unihttp-all'
 def GROUP_ID = 'top.jfunc.network'
 def TYPE = 'jar'
