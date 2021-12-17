@@ -124,7 +124,7 @@ public class ApacheUtil {
             params.forEachKeyValue(builder::addTextBody);
         }
 
-        if(ArrayUtil.isNotEmpty(formFiles)){
+        if(null != formFiles){
             for (FormFile formFile : formFiles) {
                 builder.addBinaryBody(formFile.getParameterName(), formFile.getInStream() , ContentType.parse(formFile.getContentType()) , formFile.getFilName());
             }
