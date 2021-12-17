@@ -119,8 +119,7 @@ public class NativeUtil {
     }
 
     /**
-     * @see top.jfunc.http.ssl.SSLSocketFactoryBuilder#build()
-     * @see top.jfunc.http.ssl.SSLSocketFactoryBuilder#build(String, String)
+     * @see top.jfunc.http.ssl.SSLSocketFactoryBuilder
      */
     public static void initSSL(HttpsURLConnection con , HostnameVerifier hostnameVerifier , SSLSocketFactory sslSocketFactory) {
         // 验证域
@@ -133,7 +132,7 @@ public class NativeUtil {
     }
 
     public static void setRequestHeaders(HttpURLConnection connection, String contentType,
-                                     MultiValueMap<String, String> headers) {
+                                         MultiValueMap<String, String> headers) {
         //add方式处理多值header
         if(MapUtil.notEmpty(headers)) {
             headers.forEachKeyValue(connection::addRequestProperty);
